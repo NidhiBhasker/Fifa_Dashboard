@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FIFA Data Dashboard</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+    <script type="text/javascript" src="assets/js/d3.min.js"></script>
+    <script type="text/javascript" src="assets/js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="assets/js/dc.min.js"></script>
+    <script type="text/javascript" src="assets/js/queue.min.js"></script>
+    <script type="text/javascript" src="assets/js/graph.js"></script>
+</head>
+
+<body>
+
+    <section class="hidden-md hidden-lg hidden-xl">
+        <div class="alert alert-danger text-center" id="info-banner" role="alert">
+            <p class="alert-link"><button id="more-info-button" data-toggle='modal' data-target='#infoModal'><i>More Info</i></button></p>
+        </div>
+    </section>
+
+    <!-- SideBar -->
+    <nav class="navbar navbar-default navbar-fixed-left hidden-xs hidden-sm">
+        <div class="text-center" id="sidebar-header">
+            <a href="index.html"><img class="nav-image" src="assets/images/ea-sports-logo-image.png" alt="EA Sports Logo"></a>
+            <h4>FIFA DATA DASHBOARD</h4>
+        </div>
+        <div>
+            <div class="sidebar-element">
+                <h4>Select Team</h4>
+                <div id="team-selector"></div>
+            </div>
+            <div class="sidebar-element">
+                <h4>Select Country</h4>
+                <div id="country-selector"></div>
+            </div>
+            <div class="sidebar-element">
+                <h4>Select Player</h4>
+                <div id="player-selector"></div>
+            </div>
+            <!--Reset graphs button-->
+            <div id="reset-button">
+                <a href="javascript: dc.filterAll(); dc.redrawAll();"><div id="reset-all" class="text-center"><span id="reset-text">Reset All</span></div></a>
+            </div>
+        </div>
+    </nav>
+    <!-- /SideBar -->
+
+    <!-- Overall Score Bar Chart -->
+    <section class="lighter-section" id="overall-score-chart-container">
+        <h1 class="text-center section-heading">What Position Ranks The Highest?</h1>
+        <div class="bar-chart-margin" id="score-to-position-chart"></div>
+    </section>
+    <!-- /Overall Score Bar Chart -->
+
+    <!-- Pie Charts Section -->
+    <section class="darker-section container-fluid" id="pie-charts-container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3 col-md-offset-3 pie-chart-heading">
+                <h2>Preferred Foot</h2>
+                <div id="preferred-foot-chart"></div>
+            </div>
+            <div class="col-xs-12 col-md-3 pie-chart-heading">
+                <h2>Body Type</h2>
+                <div id="body-type-chart"></div>
+            </div>
+            <div class="col-xs-12 col-md-3 pie-chart-heading">
+                <h2>Work Rate <span id="offence-defence">Offence/Defence</span></h2>
+                <div id="work-rate-chart"></div>
+            </div>
+        </div>
+    </section>
+    <!-- /Pie Charts Section -->
+
+    <!-- Salary Bar Chart -->
+    <section class="lighter-section" id="salary-chart-container">
+        <h1 class="text-center section-heading">How Much Does Each Position Earn?</h1>
+        <div class="bar-chart-margin" id="salary-bar-chart"></div>
+    </section>
+    <!-- /Salary Bar Chart -->
+
+    <!-- Whos Number One Section -->
+    <section class="darker-section container-fluid" id="number-one-container">
+        <h1 class="text-center section-heading" id="number-one-heading">Who's Number One?</h1>
+        <div class="row">
+            <div class="hidden-xs hidden-sm col-md-3 col-md-offset-2">
+                <img src="assets/images/messi-image.png" id="messi-image" alt="image of messi">
+            </div>
+            <div class="col-sm-7 col-sm-offset-5 col-md-4 col-md-offset-7" id="statistics-container">
+                <h3 class="player-stat-text text-center">Lionel Messi</h3>
+                <div class="border-line"></div>
+                <h3 class="player-stat-text text-center">FC Barcelona</h3>
+                <div class="border-line"></div>
+                <h3 class="player-stat-text text-center">Argentina</h3>
+            </div>
+        </div>
+    </section>
+    <!-- /Whos Number One Section -->
+
+    <!-- Information Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="infoModalLabel">FIFA Data Dashboard</h4>
+                </div>
+                <div class="modal-body">
+                    <p><i>For the best experience please use either a laptop or deskptop to view this website.<br><br>
+                    On larger devices you will have access to more features, such as being able to filter the data by team or country or specific player<br><br>
+                    If you are using a mobile or tablet device please turn it sideways to maximize the width of the device.<br>
+                    This will ensure you the best experience possible.</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Information Modal -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

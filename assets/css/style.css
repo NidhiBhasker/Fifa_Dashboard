@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700');
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f2f2f2;
+}
+
+/*----------------------------------------- Pop Up Modal */
+
+#more-info-button {
+    border: none;
+    background-color: transparent;
+}
+
+#info-banner {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    background-color: #d72519;
+    opacity: 0.9;
+}
+
+#info-banner p {
+    color: #fff!important;
+}
+
+#info-banner p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*----------------------------------------- Sidebar */
+
+.navbar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background-color: #939393;
+    border: none;
+}
+
+.nav-image {
+    height: 75%;
+    width: 75%;
+    margin-top: 30px;
+}
+
+#sidebar-header {
+    background-color: #f2f2f2;
+    padding-bottom: 20px;
+}
+
+.sidebar-element {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15px;
+    font-size: 1.1em;
+}
+
+.dc-select-menu {
+    width: 220px;
+}
+
+#reset-button {
+    margin-left: 15px;
+    padding: 0;
+}
+
+#reset-all {
+    width: 220px;
+    height: 60px;
+    background-color: #d72519;
+    color: #ffffff;
+    font-size: 1.2em;
+    border-radius: 15px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#reset-button,
+a:hover {
+    text-decoration: none;
+}
+
+/*----------------------------------------- Headings + Special Classes*/
+
+.section-heading {
+    margin: 0;
+    padding-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-left: 250px;
+}
+
+.lighter-section {
+    background-color: #fff;
+}
+
+.bar-chart-margin {
+    margin-left: 450px;
+}
+
+#overall-score-chart-container,
+#pie-charts-container,
+#salary-chart-container,
+#number-one-container {
+    overflow: auto;
+}
+
+/*----------------------------------------- Score To Position Bar Chart*/
+
+#overall-score-chart-container {
+    height: 600px;
+}
+
+/*----------------------------------------- Pie Charts Section*/
+
+#pie-charts-container {
+    height: 425px;
+}
+
+#pie-chart-heading h2 {
+    text-transform: uppercase;
+    font-size: 190%;
+    margin-bottom: 0;
+    margin-top: 40px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+#offence-defence {
+    font-size: 50%;
+}
+
+/*----------------------------------------- Salary to Position Bar Chart*/
+
+#salary-chart-container {
+    height: 630px;
+}
+
+/*----------------------------------------- Who's Number One*/
+
+#statistics-container {
+    display: block;
+    position: absolute;
+    margin-top: 125px;
+}
+
+#number-one-heading {
+    margin-bottom: 50px;
+}
+
+.player-stat-text {
+    font-size: 2.8em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.border-line {
+    margin: 45px 0;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#f2f2f2), to(#f2f2f2), color-stop(50%, #3fb1de));
+}
+
+/*----------------------------------------- Media Queries */
+
+@media (max-width: 1440px) {
+    .bar-chart-margin {
+        margin-left: 260px;
+    }
+
+    .pie-chart-heading {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1025px) {
+    #messi-image {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-heading {
+        margin-left: 10px;
+    }
+
+    #overall-score-chart-container,
+    #salary-chart-container {
+        height: 700px;
+    }
+
+    #pie-charts-container {
+        margin-left: 10px;
+        height: 1250px;
+    }
+
+    .bar-chart-margin {
+        margin-left: 10px;
+    }
+
+    #statistics-container {
+        margin-left: 20%;
+        padding-bottom: 60px;
+        margin-top: 20px;
+    }
+
+    #number-one-heading {
+        margin-left: -20px;
+        font-size: 1.7em;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #statistics-container {
+        margin-left: 4%;
+    }
+}
