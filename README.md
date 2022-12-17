@@ -20,7 +20,7 @@ featuring various graphs showing the data.
  - [DC js](https://dc-js.github.io/dc.js/): This project uses dcjs to create the charts.  
  - [D3 js](https://d3js.org/): This project uses d3js to render each of the dynamic, interactive charts.  
  - [Crossfilter js](https://square.github.io/crossfilter/): This project uses crossfilter js to allow dynamic interaction between all the charts.  
- - [Queue js](http://code.iamkate.com/javascript/queues/): This project uses queue js to allow the data to load first.
+ - [Queue js](http://code.iamkate.com/javascript/queues/): This project uses queue js to allow data to load first.
 
 ## 2. Input/Output
 
